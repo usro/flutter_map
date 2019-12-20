@@ -68,14 +68,19 @@ class PolylineLayer extends StatelessWidget {
         }
 
         return Container(
-          child: Stack(
-            children: [
-              for (final polylineOpt in polylineOpts.polylines)
-                CustomPaint(
-                  painter: PolylinePainter(polylineOpt),
-                  size: size,
-                ),
-            ],
+          child: GestureDetector(
+            onTap: (){
+              print('olala');
+            },
+            child: Stack(
+              children: [
+                for (final polylineOpt in polylineOpts.polylines)
+                  CustomPaint(
+                    painter: PolylinePainter(polylineOpt),
+                    size: size,
+                  ),
+              ],
+            ),
           ),
         );
       },
